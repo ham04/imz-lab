@@ -3,12 +3,12 @@ In first folders ("styk") contained our program. </br>
 If you want run the program you need: </br>
 1. Download ZIP </br>
 2. extract zip file </br>
-3. Go to the directory where the file is(?D:\git_lab\styk\src\main\java\styk\Hello.java), and execute commands. </br>
+3. Go to the directory where the file is(D:\git_lab\styk\src\main\java\styk\Hello.java), and execute commands. </br>
 «`»javac HelloWorld.java«`» </br>
-========================
 4. In this folder appears HelloWorld.class file. So the program is compiled. In order to start it</br>
 «`»java -classpath . HelloWorld«`» </br>
-========================
+</br>
+</br>
 Note, that you can compile and run your solution from the command line.</br>
 [Follow the link](http://www.vineetmanohar.com/2009/11/3-ways-to-run-java-main-from-maven/"3 ways to run Java main from Maven")</br>
 -------------------------
