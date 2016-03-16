@@ -1,4 +1,4 @@
-Now see folder which contains files
-In first folders ("styk") contained our program.
-If want run the program you need:
+Now see folder which contains files </br>
+In first folders ("styk") contained our program. </br>
+If want run the program you need: </br>
 1)
