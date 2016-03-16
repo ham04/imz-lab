@@ -10,11 +10,11 @@ If you want run the program you need: </br>
 </br>
 </br>
 Note, that you can compile and run your solution from the command line.</br>
-[Follow the link](http://www.vineetmanohar.com/2009/11/3-ways-to-run-java-main-from-maven/"3 ways to run Java main from Maven")</br>
+[3 ways to run Java main from Maven](http://www.vineetmanohar.com/2009/11/3-ways-to-run-java-main-from-maven/)</br>
 -------------------------
 But you’ll need to install a standalone version of maven1.</br>
-[Follow the link](https://maven.apache.org/download.cgi"Downloading Apache Maven 3.3.9")</br>
+[Downloading Apache Maven 3.3.9](https://maven.apache.org/download.cgi)</br>
 -------------------------
 You need use a full path to the mvn.bat file or add the maven’s bin folder to the path.</br>
-[Follow the link](http://www.computerhope.com/issues/ch000549.htm"How to set the path and environment variables in Windows")</br>
+[How to set the path and environment variables in Windows](http://www.computerhope.com/issues/ch000549.htm)</br>
 -------------------------
