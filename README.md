@@ -1,3 +1,4 @@
-#  Hi!
+# Hi!
 ========================
-The first step you should change master branch and choose a branch Seminar 01
+##The first step you should change master branch and choose a branch Seminar 01
+-------------------------
