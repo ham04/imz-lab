@@ -48,7 +48,7 @@ public class console {
 		   }
 		}
 		catch ( IOException ioe ) {
-		   // won't happen too often from the keyboard
+		   // won't happen too often from the keyboard 123
 		}
 	}
 
