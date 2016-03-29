@@ -1,55 +1,82 @@
 package Styk_Seminar_2;
+//("lv.rst.uk.to", 151)
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.io.*;
+import java.net.*;
+import java.util.*;
 
-public class console {
-	static String[] partsout(String[] array, int index)
-	{
-		 String [] result = new String[array.length-index];
-		 for (int i=index; i<(array.length); i++)
-		  {
-			 result[i-index] = array[i];
-			 
-	  	  }
-		return result;
-	}
-	@SuppressWarnings("null")
-	public static void main(String[] args) {
-				String[] parts;
-		
-				InputStreamReader isr = new InputStreamReader ( System.in );
-		BufferedReader br = new BufferedReader ( isr );
-				String s = null;
-				System.out.printf("Enter String%n");
-		try {
-		   while ( (s = br.readLine ()) != null ) {
-			  parts = s.split(" ");
-			  switch (parts[0]) {
-	            case "ping":  System.out.printf("Your command is ping%n");
-	                     break;
-	            case "echo":           	
-	            	    	System.out.printf("Your command is 'echo' with the parameter %s%n",String.join(" ", partsout(parts,1)));
-	                     break;
-	            case "login": System.out.printf("Your command is 'login' with the parameters: name=%s, password=%s%n", parts[1], parts[2]);
-	                     break;
-	            case "list":  System.out.printf("Your command is 'list'%n");
-	                     break;
-	            case "msg":  System.out.printf("Your command is 'msg' with the name: %s, text of the msg is: %s%n",parts[1], String.join(" ", partsout(parts,2)));
-	                     break;
-	            case "file":  System.out.printf("Your command is 'file' with the parameters: username=%s, filename=%s%n", parts[1], parts[2]);
-	                     break;
-	            case "exit":  System.exit(0);
-	                     break;
-	            default: System.out.println("Invalid command");
-	                     break;
-	        }
-		   }
-		}
-		catch ( IOException ioe ) {
-		   // won't happen too often from the keyboard
-		}
-	}
-
+public class console
+{
+  public static void main(String args[])
+  {
+    byte bKbdInput[] = new byte[256];
+    Socket s;
+    InputStream is;
+    OutputStream os;
+    try
+    {
+      System.out.println(
+        "Socket Client Application" +
+        "\nEnter any string or" +
+        " 'quit' to exit...");
+    }
+    catch(Exception ioe)
+    {
+      System.out.println(ioe.toString());
+    }
+    try
+    {
+      s = new Socket("lv.rst.uk.to", 151);
+      is = s.getInputStream();
+      os = s.getOutputStream();
+      byte buf[] = new byte[512];
+      int length;
+      String str;
+      while(true)
+      {
+        length = System.in.read(bKbdInput);
+        if(length != 1)
+        {
+          str = new String(bKbdInput, 0);
+          StringTokenizer st;
+          st   = new StringTokenizer(
+            str, "\r\n");
+          str = new String(
+            (String)st.nextElement());
+          System.out.println(">  " + str);
+          os.write(bKbdInput, 0, length);
+          os.flush();
+          length = is.read(buf);
+          if(length == -1)
+            break;
+          str = new String(buf, 0);
+          st   = new StringTokenizer(
+            str, "\r\n");
+          str = new String(
+              (String)st.nextElement());
+          System.out.println(">> " + str);
+          if(str.equals("quit"))
+            break;
+        }
+      }
+      is.close();
+      os.close();
+      s.close();
+    }
+    catch(Exception ioe)
+    {
+      System.out.println(ioe.toString());
+    }    
+    try
+    {
+      System.out.println(
+        "Press <Enter> to " +
+         "terminate application...");
+      System.in.read(bKbdInput);
+    }
+    catch(Exception ioe)
+    {
+      System.out.println(ioe.toString());
+    }
+  }
 }
