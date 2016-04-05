@@ -1,0 +1,33 @@
+package Styk_Seminar_2;
+
+import java.io.*;
+import java.net.*;
+
+class console extends Thread
+{
+    public static void main(String args[])
+    {
+        try
+        {
+            // Відкриваємо сокет і конектимся до ip(Х.Х.Х.Х) : port(X)
+            // Отримуємо сокет сервера
+            Socket s = new Socket("vk.com", 80);
+
+            // Беремо потік виводу і вводимо туди перший аргумент
+            // Заданий при виклику, адрес відкритого сокета і порт
+            args[0] = args[0]+"\n"+s.getInetAddress().getHostAddress()
+                            +":"+s.getLocalPort();
+            s.getOutputStream().write(args[0].getBytes());
+
+            // Читаємо відповідь
+            byte buf[] = new byte[64*1024];
+            int r = s.getInputStream().read(buf);
+            String data = new String(buf, 0, r);
+
+            // Виводимо відповідь в консоль
+            System.out.println(data);
+        }
+        catch(Exception e)
+        {System.out.println("init error: "+e);} // Вивід виключень
+    }
+}
