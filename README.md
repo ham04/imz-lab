@@ -5,4 +5,4 @@ If you want to run the solutions:
 2.Choose File -> Import -> Existing Maven Project ->
 
 3.In the Package Explorer choose:
-/styk_imz/src/main/java/Styk_Seminar_2/ConsoleInterp.java
+/styk_imz/src/main/java/Styk_Seminar_2/console.java
