@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring accessors="true" comment="Delete element from project &apos;styk_imz&apos;&#x0D;&#x0A;- Original project: &apos;styk_imz&apos;&#x0D;&#x0A;- Original element: &apos;Styk_Seminar_3.package-info.java&apos;" description="Delete element" element1="/src\/main\/java&lt;Styk_Seminar_3{package-info.java" elements="1" flags="589830" id="org.eclipse.jdt.ui.delete" resources="0" stamp="1459849903791" subPackages="false" version="1.0"/>
-</session>

@@ -33,6 +33,7 @@
 	</section>
 	<section name="MavenProjectImportWizardPage">
 		<list key="rootDirectory">
+			<item value="D:\documents\Dropbox\Distributed systems and Clouds\2015-2016\Seminars\code\server.rest"/>
 		</list>
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>
